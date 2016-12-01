@@ -6,10 +6,14 @@
     <title>服务</title>
     <link rel="stylesheet" href="../css/service.css">
 </head>
-<body>
+<body id="app">
 
-<div>
-    服务界面
+<!--头部-->
+<div class="topBanner" >
+    <!--背景图片-->
+    <div class="topImage">
+        <img src="" id="bannerBackgroudImage">
+    </div>
 </div>
 
 <!--tabBar-->
@@ -52,6 +56,27 @@
     $(function () {
         Core.tableBar.init(1);
     });
+    var appData = {
+        bannerBackgroundImage:"",
+    };
+
+    var appFunc = {
+
+    };
+    var appVue = new Vue({
+
+        el: "#app",
+        data: appData,
+        methods: {
+        },
+        ready: function () {
+            loadfencelist();
+        }
+    });
+    function loadfencelist() {
+        appData.bannerBackgroundImage = "../source/banner2.png";
+        $('#bannerBackgroudImage').attr('src', appData.bannerBackgroundImage);
+    };
 </script>
 </body>
 </html>

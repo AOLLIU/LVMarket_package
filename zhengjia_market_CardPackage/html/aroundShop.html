@@ -6,11 +6,16 @@
     <title>附近门店</title>
     <link rel="stylesheet" href="../css/aroundShop.css">
 </head>
-<body>
+<body id="app">
 
-<div>
-    附近门店界面
-</div>
+    <!--头部-->
+    <div class="topBanner" >
+        <!--背景图片-->
+        <div class="topImage">
+            <img src="" id="bannerBackgroudImage">
+        </div>
+    </div>
+
 
 <!--tabBar-->
 <div class="table_bar">
@@ -51,6 +56,27 @@
     $(function () {
         Core.tableBar.init(3);
     });
+    var appData = {
+        bannerBackgroundImage:"",
+    };
+
+    var appFunc = {
+
+    };
+    var appVue = new Vue({
+
+        el: "#app",
+        data: appData,
+        methods: {
+        },
+        ready: function () {
+            loadfencelist();
+        }
+    });
+    function loadfencelist() {
+        appData.bannerBackgroundImage = "../source/banner4.png";
+        $('#bannerBackgroudImage').attr('src', appData.bannerBackgroundImage);
+    };
 </script>
 
 </body>
