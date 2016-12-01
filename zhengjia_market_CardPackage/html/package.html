@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <title>我的会员卡[正佳]</title>
+    <link rel="stylesheet" href="../css/package.css">
+</head>
+<body id="app">
+    <div class="container">
+
+        <!--头部-->
+        <div class="topBanner" >
+            <!--背景图片-->
+            <div class="topImage">
+                <img src="" id="bannerBackgroudImage">
+            </div>
+            <div class="innerContent">
+                <!--头像-->
+                <div class="userIcon">
+                    <img src="" id="userIconImage">
+                </div>
+                <!--用户名-->
+                <div class="userName">{{userName}}</div>
+                <!--用户描述-->
+                <div class="userDiscription">{{userDiscription}}</div>
+            </div>
+        </div>
+
+        <!--分栏-->
+        <div class="fence">
+            <ul id="list">
+                <li v-for="d in list" @click="fenceOnClick(d.url)">
+                    <div class="fenceTitle">{{d.name}}</div>
+                    <div class="fenceDes">{{d.desc}}</div>
+                </li>
+            </ul>
+        </div>
+
+        <!--分项列表-->
+        <div class="projectGroup">
+            <ul class="projectGroupRows">
+                <li v-for="d in projectGroupRows" class="projectGroupRowItem" @click="projectGroupRowItemOnClick(d.url)">
+                    <div class="projectItemImageDiv">
+                        <img v-bind:src="d.projectItemImage" class="projectItemImage">
+                    </div>
+                    <div class="labelDiv">
+                        <label class="rowTitle">{{d.rowTitle}}</label>
+                        <label class="rowSubTitle">{{d.rowSubTitle}}</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--分项列表-->
+        <div class="projectGroup">
+            <ul class="projectGroupRows">
+                <li v-for="d in projectGroupRows" class="projectGroupRowItem" @click="projectGroupRowItemOnClick(d.url)">
+                    <div class="projectItemImageDiv">
+                        <img v-bind:src="d.projectItemImage" class="projectItemImage">
+                    </div>
+                    <div class="labelDiv">
+                        <label class="rowTitle">{{d.rowTitle}}</label>
+                        <label class="rowSubTitle">{{d.rowSubTitle}}</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--tabBar-->
+    <div class="table_bar">
+
+        <div class="nav-view" id="table_bar_home">
+            <div class="table_bar_btn active">
+                <div class="logo-home"></div>
+                <div class="label">会员卡</div>
+            </div>
+        </div>
+        <div class="nav-view" id="table_bar_market">
+            <div class="table_bar_btn">
+                <div class="logo-market"></div>
+                <div class="label">服务</div>
+            </div>
+        </div>
+        <div class="nav-view">
+            <div class="table_bar_btn">
+                <div class="logo-active"></div>
+                <div class="label">积分商城</div>
+            </div>
+        </div>
+        <div class="nav-view" id="table_bar_me">
+            <div class="table_bar_btn ">
+                <div class="logo-me"></div>
+                <div class="label">附近门店</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<script src="../third/jquery.min.js"></script>
+<script src="../third/vue.min.js"></script>
+<script src="../js/core.js"></script>
+<script>
+    $(function () {
+        $(window).resize(function(){
+            $('#list li').width(( document.body.clientWidth / appData.list.length - appData.list.length + 1));
+        });
+    });
+
+    var appData = {
+        bannerBackgroundImage:"",
+        userIcon:"",
+        userName:"",
+        userDiscription:"",
+        list: [],
+        projectGroupRows:[],
+    };
+
+    var appFunc = {
+        fenceOnClick: function (url) {
+//            window.location.href = "";
+            alert(url);
+        },
+        projectGroupRowItemOnClick:function (url) {
+//            window.location.href = "";
+            alert(url);
+
+            $.ajax({
+                url: "",
+                data: {
+                },
+                type: "POST",
+                success: function (data) {
+                    if (data.errCode == "0") {
+                    } else if (data.errCode == "403") {
+//                    alert("获取失败");
+                    } else {
+//                    alert(data.errMsg);
+                    }
+                }
+            });
+        }
+    };
+
+    var appVue = new Vue({
+
+        el: "#app",
+                data: appData,
+                methods: {
+                    fenceOnClick: appFunc.fenceOnClick,
+                    projectGroupRowItemOnClick:appFunc.projectGroupRowItemOnClick
+        },
+        ready: function () {
+            loadfencelist();
+        }
+    });
+
+    function loadfencelist() {
+
+        appData.userName = "AOLIU";
+        appData.userDiscription = "正佳广场微会员,微会员";
+        appData.userIcon = "../source/Snip20161129_14.png";
+        appData.bannerBackgroundImage = "../source/banner.png";
+        appData.list = [
+            {"name":"积分","desc":"0","url":"jiefen.com"},
+            {"name":"优惠劵","desc":"0张","url":"youhuiquan.com"},
+            {"name":"余额","desc":"敬请期待","url":"yu'e.com"}
+        ];
+        appData.projectGroupRows = [
+            {"projectItemImage":"../source/Snip20161129_14.png","rowTitle":"会员认证","rowSubTitle":"已认证","url":"点击了会员认证"},
+            {"projectItemImage":"../source/Snip20161129_14.png","rowTitle":"会员特权","rowSubTitle":"","url":"点击了会员特权"},
+            {"projectItemImage":"../source/Snip20161129_14.png","rowTitle":"个人资料","rowSubTitle":"","url":"点击了个人资料"},
+            {"projectItemImage":"../source/Snip20161129_14.png","rowTitle":"添加到卡包","rowSubTitle":"","url":"点击了添加到卡包"},
+        ];
+
+        $('#userIconImage').attr('src', appData.userIcon);
+        $('#bannerBackgroudImage').attr('src', appData.bannerBackgroundImage);
+
+        var listCount = appData.list.length;
+        setTimeout(function(){
+            $('#list li').width(( document.body.clientWidth / listCount - listCount + 1));
+        },0);
+
+
+        $.ajax({
+            url: "",
+            data: {
+            },
+            type: "GET",
+            success: function (data) {
+                if (data.errCode == "0") {
+                } else if (data.errCode == "403") {
+//                    alert("获取失败");
+                } else {
+//                    alert(data.errMsg);
+                }
+            }
+        });
+    }
+
+
+
+
+</script>
+</body>
+</html>

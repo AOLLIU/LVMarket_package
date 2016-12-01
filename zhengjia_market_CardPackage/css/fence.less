@@ -1,0 +1,35 @@
+@import "reset";
+
+@fence-height:50px;
+
+.fence{
+  background-color: white;
+  border-bottom: 1px solid gainsboro;
+}
+
+
+#list{
+  height: @fence-height;
+
+  > li{
+    margin-top: 5px;
+    float: left;
+    border-right: 1px solid gainsboro;
+    text-align: center;
+    &:last-child{
+      border-right:0px;
+    }
+  }
+}
+
+.fenceTitle{
+  color: darkgray;
+  font-size: 16px;
+  //background-color: aqua;
+}
+
+.fenceDes{
+  color: gray;
+  font-size: 13px;
+  //background-color: aqua;
+}

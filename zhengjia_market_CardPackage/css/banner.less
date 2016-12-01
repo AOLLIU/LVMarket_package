@@ -1,0 +1,55 @@
+@import "constants";
+@import "reset";
+
+@topImageHeight:170px;
+@innerContent-margin-top:-150px;
+@innerContent-margin-bottom:20px;
+@userIcon-width:50px;
+@userIcon-border-radius:@userIcon-width * 0.5;
+@view-normal-margin:5px;
+
+@userName-fontsize:16px;
+@userDiscription:13px;
+
+@color1:blue;
+
+
+.topBanner {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.topImage{
+  width: 100%;
+  overflow: hidden;
+  height: @topImageHeight;
+}
+
+.topImage >img{
+  width: 100%;
+}
+
+.innerContent{
+  margin-top: @innerContent-margin-top;
+  margin-bottom: @innerContent-margin-bottom;
+}
+
+.userIcon >img{
+  width: @userIcon-width;
+  border-radius:@userIcon-border-radius;
+}
+
+.userName{
+  margin-top: @view-normal-margin;
+  font-size: @userName-fontsize;
+  color: @color1;
+  font-weight: bold;
+}
+
+.userDiscription{
+  margin-top: @view-normal-margin;
+  font-size: @userDiscription;
+  color: @color1;
+}
