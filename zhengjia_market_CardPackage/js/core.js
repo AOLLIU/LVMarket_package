@@ -17,28 +17,24 @@ Core.tableBar = {
         $("#table_bar_home").on("click", function() {
             if (Core.tableBar.pageIndex != 0) {
                 location.href = homeURL;
-                alert("点击了home");
             }
         });
 
         $("#table_bar_market").on("click", function() {
             if (Core.tableBar.pageIndex != 1) {
                 location.href = marketUrl;
-                alert("点击了服务");
             }
         });
 
         $("#table_bar_post").on("click", function() {
             if (Core.tableBar.pageIndex != 2) {
                 location.href = postURL;
-                alert("点击了积分商城");
             }
         });
 
         $("#table_bar_me").on("click", function() {
             if (Core.tableBar.pageIndex != 3) {
                 location.href = meURL;
-                alert("点击了附近门店");
             }
         });
 

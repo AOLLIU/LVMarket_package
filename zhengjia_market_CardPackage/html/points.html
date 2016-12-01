@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <title>积分</title>
+    <link rel="stylesheet" href="../css/points.css">
+</head>
+<body>
+
+<div>
+    积分界面
+</div>
+
+<!--tabBar-->
+<div class="table_bar">
+    <input type="hidden" id="homeUrl" value="./package.html">
+    <input type="hidden" id="marketUrl" value="./service.html">
+    <input type="hidden" id="postUrl" value="./points.html">
+    <input type="hidden" id="meUrl" value="./aroundShop.html">
+
+    <div class="nav-view" id="table_bar_home">
+        <div class="table_bar_btn">
+            <div class="logo-home"></div>
+            <div class="label">会员卡</div>
+        </div>
+    </div>
+    <div class="nav-view" id="table_bar_market">
+        <div class="table_bar_btn">
+            <div class="logo-market"></div>
+            <div class="label">服务</div>
+        </div>
+    </div>
+    <div class="nav-view" id="table_bar_post">
+        <div class="table_bar_btn active">
+            <div class="logo-active"></div>
+            <div class="label">积分商城</div>
+        </div>
+    </div>
+    <div class="nav-view" id="table_bar_me">
+        <div class="table_bar_btn ">
+            <div class="logo-me"></div>
+            <div class="label">附近门店</div>
+        </div>
+    </div>
+</div>
+
+<script src="../third/jquery.min.js"></script>
+<script src="../third/vue.min.js"></script>
+<script src="../js/core.js"></script>
+<script>
+    $(function () {
+        Core.tableBar.init(2);
+    });
+</script>
+</body>
+</html>

@@ -70,6 +70,11 @@
     <!--tabBar-->
     <div class="table_bar">
 
+        <input type="hidden" id="homeUrl" value="./package.html">
+        <input type="hidden" id="marketUrl" value="./service.html">
+        <input type="hidden" id="postUrl" value="./points.html">
+        <input type="hidden" id="meUrl" value="./aroundShop.html">
+
         <div class="nav-view" id="table_bar_home">
             <div class="table_bar_btn active">
                 <div class="logo-home"></div>
@@ -82,7 +87,7 @@
                 <div class="label">服务</div>
             </div>
         </div>
-        <div class="nav-view">
+        <div class="nav-view" id="table_bar_post">
             <div class="table_bar_btn">
                 <div class="logo-active"></div>
                 <div class="label">积分商城</div>
@@ -104,6 +109,7 @@
 <script src="../js/core.js"></script>
 <script>
     $(function () {
+        Core.tableBar.init(0);
         $(window).resize(function(){
             $('#list li').width(( document.body.clientWidth / appData.list.length - appData.list.length + 1));
         });

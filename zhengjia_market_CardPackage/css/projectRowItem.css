@@ -149,10 +149,36 @@ a:hover {
   color: #333;
 }
 .projectGroupRows {
-  vertical-align: middle;
+  margin-top: 20px;
+  border-top: 1px solid gainsboro;
+  background-color: white;
 }
 .projectGroupRowItem {
-  background-color: aqua;
-  height: 100px;
-  line-height: 100px;
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 1px solid gainsboro;
+}
+.projectItemImageDiv {
+  display: inline-block;
+  vertical-align: middle;
+}
+.labelDiv {
+  width: 84%;
+  display: inline-block;
+}
+.projectItemImage {
+  height: 40px;
+  border-radius: 20px;
+  margin-left: 20px;
+  vertical-align: middle;
+}
+.rowTitle {
+  margin-left: 20px;
+  font-size: 16px;
+}
+.rowSubTitle {
+  float: right;
+  margin-right: 15px;
+  font-size: 13px;
+  color: aqua;
 }

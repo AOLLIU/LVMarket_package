@@ -1,7 +1,10 @@
 @import "reset";
+@import "constants";
 
 @fence-height:50px;
-
+@view-margin : 5px;
+@font-sizeOne:16px;
+@font-sizeTwo:13px;
 .fence{
   background-color: white;
   border-bottom: 1px solid gainsboro;
@@ -12,7 +15,7 @@
   height: @fence-height;
 
   > li{
-    margin-top: 5px;
+    margin-top: @view-margin;
     float: left;
     border-right: 1px solid gainsboro;
     text-align: center;
@@ -24,12 +27,10 @@
 
 .fenceTitle{
   color: darkgray;
-  font-size: 16px;
-  //background-color: aqua;
+  font-size: @font-sizeOne;
 }
 
 .fenceDes{
   color: gray;
-  font-size: 13px;
-  //background-color: aqua;
+  font-size: @font-sizeTwo;
 }
