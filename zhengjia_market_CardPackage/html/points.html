@@ -9,26 +9,29 @@
 <body id="app">
 
 <!--头部-->
-<!--<div class="topBanner" >-->
-    <!--&lt;!&ndash;背景图片&ndash;&gt;-->
-    <!--<div class="topImage">-->
-        <!--<img src="" id="bannerBackgroudImage">-->
-    <!--</div>-->
-<!--</div>-->
+<div class="topBanner" >
+    <!--背景图片-->
+    <div class="topImage">
+        <img src="" id="bannerBackgroudImage">
+    </div>
+</div>
 
 
 <!--分项列表-->
 <div class="jifenmarketList">
     <ul class="jifenmarketRows">
         <li v-for="d in jifenmarketRows" class="jifenmarketRowItem" @click="jifenmarketRowItemOnClick(d.url)">
+
             <div class="jifenmarketItemImageDiv">
                 <img v-bind:src="d.jifenmarketItemImage" class="jifenmarketItemImage">
             </div>
+
             <div class="jifenmarketlabelDiv">
                 <label class="jifenmarketrowTitle">{{d.jifenmarketrowTitle}}</label>
                 <label class="jifenmarketrowSubTitle">{{d.jifenmarketrowSubTitle}}</label>
                 <label class="jifenmarketMark">{{d.jifenmarketMark}}</label>
             </div>
+
             <div class="jifenmarketItemLinkImageDiv">
                 <img v-bind:src="d.jifenmarketItemLinkImage" class="jifenmarketItemLinkImage">
             </div>
@@ -87,7 +90,7 @@
     var appFunc = {
 
         jifenmarketRowItemOnClick:function (url) {
-//            window.location.href = "";
+            window.location.href = "";
             alert(url);
 
             $.ajax({
@@ -123,7 +126,16 @@
 
         appData.jifenmarketRows = [
             {"jifenmarketItemImage":"../source/1.png","jifenmarketrowTitle":"大杯海岩咖啡减3元","jifenmarketrowSubTitle":"微会员积分兑换专享","jifenmarketMark":"300积分","jifenmarketItemLinkImage":"../source/3.png","url":"点击了第一行"},
-//            {"jifenmarketItemImage":"../source/1.png","jifenmarketrowTitle":"瓶装咖啡减3元","jifenmarketrowSubTitle":"微会员积分兑换专享","jifenmarketMark":"200积分","jifenmarketItemLinkImage":"../source/3.png","url":"点击了第二行"},{"jifenmarketItemImage":"../source/1.png","jifenmarketrowTitle":"帕玛森乳酪立减2元","jifenmarketrowSubTitle":"微会员积分兑换专享","jifenmarketMark":"200积分","jifenmarketItemLinkImage":"../source/2.png","url":"点击了第三行"},{"jifenmarketItemImage":"../source/1.png","jifenmarketrowTitle":"大杯海岩咖啡减3元","jifenmarketrowSubTitle":"微会员积分兑换专享","jifenmarketMark":"200积分","jifenmarketItemLinkImage":"../source/3.png","url":"点击了第四行"},{"jifenmarketItemImage":"../source/1.png","jifenmarketrowTitle":"大杯海岩咖啡减3元","jifenmarketrowSubTitle":"微会员积分兑换专享","jifenmarketMark":"200积分","jifenmarketItemLinkImage":"../source/3.png","url":"点击了第五行"},{"jifenmarketItemImage":"../source/1.png","jifenmarketrowTitle":"大杯海岩咖啡减3元","jifenmarketrowSubTitle":"微会员积分兑换专享","jifenmarketMark":"200积分","jifenmarketItemLinkImage":"../source/3.png","url":"点击了第六行"},
+
+            {"jifenmarketItemImage":"../source/1.png","jifenmarketrowTitle":"瓶装咖啡减3元","jifenmarketrowSubTitle":"微会员积分兑换专享","jifenmarketMark":"200积分","jifenmarketItemLinkImage":"../source/3.png","url":"点击了第二行"},
+
+            {"jifenmarketItemImage":"../source/2.png","jifenmarketrowTitle":"帕玛森乳酪立减2元","jifenmarketrowSubTitle":"微会员积分兑换专享","jifenmarketMark":"200积分","jifenmarketItemLinkImage":"../source/3.png","url":"点击了第三行"},
+
+            {"jifenmarketItemImage":"../source/1.png","jifenmarketrowTitle":"大杯海岩咖啡减3元","jifenmarketrowSubTitle":"微会员积分兑换专享","jifenmarketMark":"200积分","jifenmarketItemLinkImage":"../source/3.png","url":"点击了第四行"},
+
+            {"jifenmarketItemImage":"../source/1.png","jifenmarketrowTitle":"大杯海岩咖啡减3元","jifenmarketrowSubTitle":"微会员积分兑换专享","jifenmarketMark":"200积分","jifenmarketItemLinkImage":"../source/3.png","url":"点击了第五行"},
+
+            {"jifenmarketItemImage":"../source/1.png","jifenmarketrowTitle":"大杯海岩咖啡减3元","jifenmarketrowSubTitle":"微会员积分兑换专享","jifenmarketMark":"200积分","jifenmarketItemLinkImage":"../source/3.png","url":"点击了第六行"},
         ];
 
     };

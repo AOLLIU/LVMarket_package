@@ -3,54 +3,63 @@
 
 body{
   background-color: ghostwhite;
+  margin-bottom: 67px;
 }
+
+
 .jifenmarketRowItem{
-  width: 100%;
-  background-color: #5EA4EC;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  background-color: white;
+  height: 100px;
+  position: relative;
+}
+
+.jifenmarketItemImageDiv{
+  margin-left: 20px;
   display:inline-block;
   height: 100px;
-  .jifenmarketItemImageDiv{
-    margin-left: 20px;
-    display:inline-block;
-    vertical-align:middle;
-    height: 100px;
-    background-color: #e456a4;
-    > .jifenmarketItemImage{
-      margin-top: 10px;
-      height: 80px;
-      width: 80px;
-    }
-  }
-  .jifenmarketlabelDiv{
-    .clearfix;
-    height: 100px;
-    display:inline-block;
-    background-color: #e456a4;
-    > .jifenmarketrowTitle{
-      display: block;
-      font-size: 16px;
-      color: black;
-    }
-    > .jifenmarketrowSubTitle{
-      display: block;
-      margin-top: 5px;
-      font-size: 13px;
-      color: gray;
-    }
-    > .jifenmarketMark{
-      display: block;
-    }
-  }
-
-  .jifenmarketItemLinkImageDiv{
-    display:inline-block;
-    vertical-align:middle;
-    > .jifenmarketItemLinkImage{
-      width: 30px;
-    }
-  }
 }
 
+.jifenmarketItemImage{
+  margin-top: 10px;
+  height: 80px;
+  width: 80px;
+}
 
+.jifenmarketlabelDiv {
+  margin-left: 15px;
+  display: inline-block;
+}
 
+.jifenmarketrowTitle{
+  display: block;
+  font-size: 16px;
+  color: black;
+}
 
+.jifenmarketrowSubTitle{
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+  color: gray;
+}
+
+.jifenmarketMark{
+  margin-top: 20px;
+  display: block;
+}
+
+.jifenmarketItemLinkImageDiv{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display:inline-block;
+  vertical-align:middle;
+}
+
+.jifenmarketItemLinkImage{
+  width: 30px;
+}
