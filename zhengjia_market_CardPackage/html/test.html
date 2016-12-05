@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+
+        #barcodeTarget{
+
+        }
+    </style>
+</head>
+<body>
+<div id="barcodeTarget" class="barcodeTarget"></div>
+
+<script src="../third/jquery.min.js"></script>
+<script src="../third/jquery-barcode-2.0.2.min.js"></script>
+
+<script type="text/javascript">
+
+    function generateBarcode(){
+
+        var value = "13560398703";
+        var btype = "code128";
+        var renderer = "css";
+        var settings = {
+            output:renderer,
+            bgColor: "#FFFFFF",
+            color: "#000000",
+            barWidth: "1",
+            barHeight: "50",
+            moduleSize: "5",
+//          posX: $("#posX").val(),
+//          posY: $("#posY").val(),
+            addQuietZone: "1"
+        };
+
+        $("#barcodeTarget").html("").show().barcode(value, btype, settings);
+
+    }
+
+    $(function(){
+        generateBarcode();
+    });
+
+</script>
+</body>
+</html>

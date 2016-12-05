@@ -3,6 +3,51 @@
 @import "projectRowItem";
 @import "tableBar";
 
+
+@lineHeight:60px;
+
 body{
   background-color: ghostwhite;
+}
+
+
+//条形码入口的css
+.barcodeEnterDiv{
+  background-color: white;
+  height: @lineHeight;
+  //line-height: @lineHeight;
+}
+
+.barcodeEnterDivLeftDiv{
+  margin-top: 10px;
+  margin-left: 15px;
+  display:inline-block;
+}
+
+.barcodeEnterRightDiv{
+  .pull-right;
+  margin-right: 15px;
+  margin-top: 10px;
+}
+
+.memberCardNumDiv{
+  padding: 0px;
+  line-height: 20px;
+}
+
+.memberCardTipDiv{
+  padding: 0px;
+  line-height: 20px;
+}
+
+.memberCardNum{
+  color: #46e193;
+  font-size: 14px;
+}
+.memberCardTip{
+  color: gray;
+  font-size: 12px;
+}
+#barcodeEnterImage{
+  width: 30px;
 }

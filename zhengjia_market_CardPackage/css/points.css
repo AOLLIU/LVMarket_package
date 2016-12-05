@@ -436,3 +436,59 @@ a:hover {
   font-size: 13px;
   color: #0000ff;
 }
+body {
+  background-color: ghostwhite;
+}
+.jifenmarketRowItem {
+  width: 100%;
+  background-color: #5EA4EC;
+  display: inline-block;
+  height: 100px;
+}
+.jifenmarketRowItem .jifenmarketItemImageDiv {
+  margin-left: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  height: 100px;
+  background-color: #e456a4;
+}
+.jifenmarketRowItem .jifenmarketItemImageDiv > .jifenmarketItemImage {
+  margin-top: 10px;
+  height: 80px;
+  width: 80px;
+}
+.jifenmarketRowItem .jifenmarketlabelDiv {
+  clear: both;
+  height: 100px;
+  display: inline-block;
+  background-color: #e456a4;
+}
+.jifenmarketRowItem .jifenmarketlabelDiv:after {
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  content: ".";
+}
+.jifenmarketRowItem .jifenmarketlabelDiv > .jifenmarketrowTitle {
+  display: block;
+  font-size: 16px;
+  color: black;
+}
+.jifenmarketRowItem .jifenmarketlabelDiv > .jifenmarketrowSubTitle {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+  color: gray;
+}
+.jifenmarketRowItem .jifenmarketlabelDiv > .jifenmarketMark {
+  display: block;
+}
+.jifenmarketRowItem .jifenmarketItemLinkImageDiv {
+  display: inline-block;
+  vertical-align: middle;
+}
+.jifenmarketRowItem .jifenmarketItemLinkImageDiv > .jifenmarketItemLinkImage {
+  width: 30px;
+}

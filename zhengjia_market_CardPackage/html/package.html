@@ -37,6 +37,22 @@
             </ul>
         </div>
 
+        <!--条形码入口-->
+        <div class="barcodeEnterDiv" @click="barcodeEnterDivClick">
+            <div class="barcodeEnterDivLeftDiv">
+                <div class="memberCardNumDiv">
+                    <label class="memberCardNum">135-6039-8888</label>
+                </div>
+                <div class="memberCardTipDiv">
+                    <label class="memberCardTip">点击查看会员卡,累计消费积分</label>
+                </div>
+            </div>
+            <div class="barcodeEnterRightDiv">
+                <img src="../source/Snip20161205_4.png" id="barcodeEnterImage">
+            </div>
+        </div>
+
+
         <!--分项列表-->
         <div class="projectGroup">
             <ul class="projectGroupRows">
@@ -129,6 +145,9 @@
 //            window.location.href = "";
             alert(url);
         },
+        barcodeEnterDivClick:function () {
+            window.location.href = "./barcode.html";
+        },
         projectGroupRowItemOnClick:function (url) {
 //            window.location.href = "";
             alert(url);
@@ -156,7 +175,8 @@
                 data: appData,
                 methods: {
                     fenceOnClick: appFunc.fenceOnClick,
-                    projectGroupRowItemOnClick:appFunc.projectGroupRowItemOnClick
+                    projectGroupRowItemOnClick:appFunc.projectGroupRowItemOnClick,
+                    barcodeEnterDivClick:appFunc.barcodeEnterDivClick,
         },
         ready: function () {
             loadfencelist();

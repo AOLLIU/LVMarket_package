@@ -497,3 +497,36 @@ a:hover {
 body {
   background-color: ghostwhite;
 }
+.barcodeEnterDiv {
+  background-color: white;
+  height: 60px;
+}
+.barcodeEnterDivLeftDiv {
+  margin-top: 10px;
+  margin-left: 15px;
+  display: inline-block;
+}
+.barcodeEnterRightDiv {
+  float: right;
+  margin-right: 15px;
+  margin-top: 10px;
+}
+.memberCardNumDiv {
+  padding: 0px;
+  line-height: 20px;
+}
+.memberCardTipDiv {
+  padding: 0px;
+  line-height: 20px;
+}
+.memberCardNum {
+  color: #46e193;
+  font-size: 14px;
+}
+.memberCardTip {
+  color: gray;
+  font-size: 12px;
+}
+#barcodeEnterImage {
+  width: 30px;
+}
