@@ -1,2 +1,75 @@
 @import "tableBar";
 @import "banner";
+
+
+body{
+  background-color: ghostwhite;
+  margin-bottom: 67px;
+}
+
+.aroundShopHeader{
+  background-color: white;
+  height: 40px;
+  line-height: 40px;
+  //position: relative;
+  > .aroundShopHeaderLeft{
+    margin-left: 15px;
+    color: black;
+    font-size: 15px;
+  }
+  > .aroundShopHeaderRight{
+    //position: absolute;
+    //right: 15px;
+    float: right;
+    margin-right: 15px;
+    color: grey;
+    font-size: 14px;
+  }
+}
+.aroundShopList{
+  background-color: white;
+  margin-top: 10px;
+}
+.aroundShopListRow{
+  height: 70px;
+  padding: 8px 15px;
+  border-bottom: 1px solid #cfd6d7;
+  > .aroundShopListRowLeft{
+    margin-top: 10px;
+    display: inline-block;
+    > .shopNameDiv{
+      font-size: 15px;
+      color: black;
+    }
+    > .shopAddressDiv{
+      margin-top: 5px;
+      margin-bottom: 5px;
+      font-size: 12px;
+      color: darkgray;
+    }
+  }
+  > .aroundShopListRowRight{
+    float: right;
+    margin-right: 15px;
+    margin-top: 10px;
+    display: inline-block;
+    > .locationImage{
+      width: 30px;
+      height: 30px;
+    }
+    > .locationDistance{
+      color: grey;
+      font-size: 12px;
+    }
+  }
+}
+
+.shopPhoneNum{
+  color: #46e193;
+  font-size: 12px;
+  margin-right: 8px;
+}
+.businessTime{
+  color: darkgray;
+  font-size: 12px;
+}

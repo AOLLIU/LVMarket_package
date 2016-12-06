@@ -16,6 +16,33 @@
         </div>
     </div>
 
+    <!--顶部-->
+    <div class="aroundShopHeader">
+        <span class="aroundShopHeaderLeft">离你最近的门店</span>
+        <span class="aroundShopHeaderRight">其他城市</span>
+    </div>
+    <!--列表-->
+
+    <div class="aroundShopListContainer">
+        <ul class="aroundShopList">
+            <li class="aroundShopListRow" v-for="d in aroundShopListData" @click="aroundShopListRowClick(d.url)">
+                <!--左边-->
+                <div class="aroundShopListRowLeft">
+                    <div class="shopNameDiv">{{d.shopName}}</div>
+                    <div class="shopAddressDiv">{{d.shopAddress}}</div>
+                    <div class="shopPhoneNumAndBusinessTime">
+                        <span class="shopPhoneNum">{{d.shopPhoneNum}}</span>
+                        <span class="businessTime">{{d.businessTime}}</span>
+                    </div>
+                </div>
+                <!--右边-->
+                <div class="aroundShopListRowRight">
+                    <img src="../source/Snip20161206_8.png" class="locationImage">
+                    <div class="locationDistance">{{d.locationDistance}}</div>
+                </div>
+            </li>
+        </ul>
+    </div>
 
 <!--tabBar-->
 <div class="table_bar">
@@ -58,16 +85,20 @@
     });
     var appData = {
         bannerBackgroundImage:"",
+        aroundShopListData:[],
     };
 
     var appFunc = {
-
+        aroundShopListRowClick:function (url) {
+            alert(url)
+        }
     };
     var appVue = new Vue({
 
         el: "#app",
         data: appData,
         methods: {
+            aroundShopListRowClick:appFunc.aroundShopListRowClick,
         },
         ready: function () {
             loadfencelist();
@@ -75,6 +106,14 @@
     });
     function loadfencelist() {
         appData.bannerBackgroundImage = "../source/banner4.png";
+        appData.aroundShopListData = [
+                {"shopName":"85度C(东峻广场店)","shopAddress":"越秀区东风东路888号","shopPhoneNum":"020-88888888","businessTime":"营业时间:7:00-24:00","locationDistance":"0.5km","url":"点击了第一行"},
+            {"shopName":"85度C(万达广场店)","shopAddress":"越秀区东风东路888号","shopPhoneNum":"020-88888888","businessTime":"营业时间:7:00-24:00","locationDistance":"0.5km","url":"点击了第二行"},
+            {"shopName":"85度C(羊城广场店)","shopAddress":"越秀区东风东路888号","shopPhoneNum":"020-88888888","businessTime":"营业时间:7:00-24:00","locationDistance":"0.5km","url":"点击了第三行"},
+            {"shopName":"85度C(番禺广场店)","shopAddress":"越秀区东风东路888号","shopPhoneNum":"020-88888888","businessTime":"营业时间:7:00-24:00","locationDistance":"0.5km","url":"点击了第四行"},
+            {"shopName":"85度C(东峻广场店)","shopAddress":"越秀区东风东路888号","shopPhoneNum":"020-88888888","businessTime":"营业时间:7:00-24:00","locationDistance":"0.5km","url":"点击了第五行"},
+            {"shopName":"85度C(东峻广场店)","shopAddress":"越秀区东风东路888号","shopPhoneNum":"020-88888888","businessTime":"营业时间:7:00-24:00","locationDistance":"0.5km","url":"点击了第六行"}
+        ]
         $('#bannerBackgroudImage').attr('src', appData.bannerBackgroundImage);
     };
 </script>

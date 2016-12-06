@@ -46,11 +46,56 @@
     <div class="bottomBar">
         <label class="bottomScoreLabel">300积分</label>
         <span>
-            <label class="convertScoreLabel">兑换</label>
+            <label class="convertScoreLabel" @click="convertScoreBtnClick">兑换</label>
         </span>
     </div>
 </div>
 
+
+
+<script src="../third/jquery.min.js"></script>
+<script src="../third/vue.min.js"></script>
+<script>
+    $(function () {
+
+    });
+    var appData = {
+
+    };
+
+    var appFunc = {
+        convertScoreBtnClick:function () {
+            alert("点击了兑换按钮");
+
+            $.ajax({
+                url: "",
+                data: {
+                },
+                type: "POST",
+                success: function (data) {
+                    if (data.errCode == "0") {
+                    } else if (data.errCode == "403") {
+//                    alert("获取失败");
+                    } else {
+//                    alert(data.errMsg);
+                    }
+                }
+            });
+        }
+    };
+    var appVue = new Vue({
+
+        el: "#app",
+        data: appData,
+        methods: {
+            convertScoreBtnClick:appFunc.convertScoreBtnClick,
+        },
+        ready: function () {
+
+        }
+    });
+
+</script>
 
 </body>
 </html>
