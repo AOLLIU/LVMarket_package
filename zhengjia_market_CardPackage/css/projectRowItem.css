@@ -148,8 +148,10 @@ a,
 a:hover {
   color: #333;
 }
-.projectGroupRows {
+.projectGroup {
   margin-top: 20px;
+}
+.projectGroupRows {
   border-top: 1px solid gainsboro;
   background-color: white;
 }

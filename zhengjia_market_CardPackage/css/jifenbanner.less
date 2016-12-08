@@ -1,0 +1,63 @@
+@import "constants";
+@import "reset";
+
+@topImageHeight:170px;
+@innerContent-margin-top:-130px;
+@innerContent-margin-bottom:20px;
+@userIcon-width:20px;
+@userIcon-border-radius:@userIcon-width * 0.5;
+@view-normal-margin:5px;
+
+@userName-fontsize:16px;
+@userDiscription:30px;
+
+@color1:white;
+
+
+.myjifenTopBanner {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.myjifenTopImage{
+  width: 100%;
+  overflow: hidden;
+  height: @topImageHeight;
+  background-color: #46e193;
+}
+
+//.myjifenTopImage >img{
+//  width: 100%;
+//}
+
+.myjifenInnerContent{
+  margin-left: 30px;
+  margin-top: @innerContent-margin-top;
+  margin-bottom: @innerContent-margin-bottom;
+}
+
+
+.myjifenInnerContentTop{
+  height: 40px;
+  line-height: 40px;
+}
+
+.myjifenImage{
+  width: @userIcon-width;
+  border-radius:@userIcon-border-radius;
+  vertical-align: middle;
+}
+
+.myjifenText{
+  margin-top: @view-normal-margin;
+  font-size: @userName-fontsize;
+  color: @color1;
+}
+
+
+.myjifenCount{
+  margin-top: @view-normal-margin * 2;
+  font-size: @userDiscription;
+  color: @color1;
+}

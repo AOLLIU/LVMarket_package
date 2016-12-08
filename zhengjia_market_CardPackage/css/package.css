@@ -360,8 +360,10 @@ a:hover {
   color: gray;
   font-size: 13px;
 }
-.projectGroupRows {
+.projectGroup {
   margin-top: 20px;
+}
+.projectGroupRows {
   border-top: 1px solid gainsboro;
   background-color: white;
 }
@@ -494,9 +496,13 @@ a:hover {
   background-position: -72px -136px;
   margin: 13px;
 }
+body {
+  background-color: ghostwhite;
+}
 .barcodeEnterDiv {
   background-color: white;
   height: 60px;
+  border-bottom: 1px solid gainsboro;
 }
 .barcodeEnterDivLeftDiv {
   margin-top: 10px;

@@ -21,18 +21,18 @@
                     <img src="" id="userIconImage">
                 </div>
                 <!--用户名-->
-                <div class="userName">{{userName}}</div>
+                <div class="userName">{{userCardInfo.userName}}</div>
                 <!--用户描述-->
-                <div class="userDiscription">{{userDiscription}}</div>
+                <div class="userDiscription">{{userCardInfo.userDescribe}}</div>
             </div>
         </div>
 
         <!--分栏-->
         <div class="fence">
             <ul id="list">
-                <li v-for="d in list" @click="fenceOnClick(d.url)">
-                    <div class="fenceTitle">{{d.name}}</div>
-                    <div class="fenceDes">{{d.desc}}</div>
+                <li v-for="d in list" @click="fenceOnClick(d.fenceToPageUrl)">
+                    <div class="fenceTitle">{{d.fenceTitle}}</div>
+                    <div class="fenceDes">{{d.fenceSubTitle}}</div>
                 </li>
             </ul>
         </div>
@@ -41,14 +41,14 @@
         <div class="barcodeEnterDiv" @click="barcodeEnterDivClick">
             <div class="barcodeEnterDivLeftDiv">
                 <div class="memberCardNumDiv">
-                    <label class="memberCardNum">135-6039-8888</label>
+                    <label class="memberCardNum">{{userCardInfo.userCardNum}}</label>
                 </div>
                 <div class="memberCardTipDiv">
-                    <label class="memberCardTip">点击查看会员卡,累计消费积分</label>
+                    <label class="memberCardTip">{{userCardInfo.userCardTip}}</label>
                 </div>
             </div>
             <div class="barcodeEnterRightDiv">
-                <img src="../source/Snip20161205_4.png" id="barcodeEnterImage">
+                <img src="" id="barcodeEnterImage">
             </div>
         </div>
 
@@ -118,8 +118,6 @@
     </div>
 
 
-
-
 <script src="../third/jquery.min.js"></script>
 <script src="../third/vue.min.js"></script>
 <script src="../js/core.js"></script>
@@ -132,21 +130,24 @@
     });
 
     var appData = {
-        bannerBackgroundImage:"",
-        userIcon:"",
-        userName:"",
-        userDiscription:"",
+        userCardInfo:{},
         list: [],
         projectGroupRows:[],
     };
 
     var appFunc = {
         fenceOnClick: function (url) {
-//            window.location.href = "";
-            alert(url);
+            if (url === "./jifen.html"){
+                window.location.href = url;
+            }else if (url === "./discountCoupon.html"){
+                window.location.href = url;
+            }
+            else {
+                alert(url);
+            }
         },
         barcodeEnterDivClick:function () {
-            window.location.href = "./barcode.html";
+            window.location.href = appData.userCardInfo.userBarcodePageUrl;
         },
         projectGroupRowItemOnClick:function (url) {
 //            window.location.href = "";
@@ -185,15 +186,23 @@
 
     function loadfencelist() {
 
-        appData.userName = "AOLIU";
-        appData.userDiscription = "正佳广场微会员,微会员";
-        appData.userIcon = "../source/Snip20161129_14.png";
-        appData.bannerBackgroundImage = "../source/banner.png";
+        appData.userCardInfo = {
+            bannerBg:"../source/banner.png",
+            userIcon:"../source/Snip20161129_14.png",
+            userName:"AOLIU",
+            userDescribe:"正佳广场微会员,微会员",
+            userCardNum:"13560398888",
+            userCardTip:"点击查看会员卡,累计消费积分",
+            userBarcodeEnterImg:"../source/Snip20161205_4.png",
+            userBarcodePageUrl:"./barcode.html"
+        }
+
         appData.list = [
-            {"name":"积分","desc":"0","url":"jiefen.com"},
-            {"name":"优惠劵","desc":"0张","url":"youhuiquan.com"},
-            {"name":"余额","desc":"敬请期待","url":"yu'e.com"}
+            {"fenceTitle":"积分","fenceSubTitle":"0","fenceToPageUrl":"./jifen.html"},
+            {"fenceTitle":"优惠劵","fenceSubTitle":"0张","fenceToPageUrl":"./discountCoupon.html"},
+            {"fenceTitle":"余额","fenceSubTitle":"敬请期待","fenceToPageUrl":"yu'e.com"}
         ];
+
         appData.projectGroupRows = [
             {"projectItemImage":"../source/Snip20161129_14.png","rowTitle":"会员认证","rowSubTitle":"已认证","url":"点击了会员认证"},
             {"projectItemImage":"../source/Snip20161129_14.png","rowTitle":"会员特权","rowSubTitle":"","url":"点击了会员特权"},
@@ -201,10 +210,12 @@
             {"projectItemImage":"../source/Snip20161129_14.png","rowTitle":"添加到卡包","rowSubTitle":"","url":"点击了添加到卡包"},
         ];
 
-        $('#userIconImage').attr('src', appData.userIcon);
-        $('#bannerBackgroudImage').attr('src', appData.bannerBackgroundImage);
+        $('#userIconImage').attr('src', appData.userCardInfo.userIcon);
+        $('#bannerBackgroudImage').attr('src', appData.userCardInfo.bannerBg);
+        $('#barcodeEnterImage').attr('src', appData.userCardInfo.userBarcodeEnterImg);
 
         var listCount = appData.list.length;
+
         setTimeout(function(){
             $('#list li').width(( document.body.clientWidth / listCount - listCount + 1));
         },0);

@@ -153,106 +153,6 @@
     -webkit-transform: scaleY(1);
   }
 }
-.table_bar {
-  clear: both;
-  border-top: 1px solid #0050a3;
-  position: fixed;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  z-index: 999;
-  background-color: #ffffff;
-  height: 60px;
-}
-.table_bar:after {
-  clear: both;
-  display: block;
-  visibility: hidden;
-  height: 0;
-  overflow: hidden;
-  content: ".";
-}
-.table_bar > .nav-view {
-  width: 25%;
-  float: left;
-  min-height: 1px;
-  text-align: center;
-}
-.table_bar_btn {
-  height: 60px;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.table_bar_btn > .label {
-  font-size: 12px;
-  line-height: 24px;
-  color: #e4007e;
-  text-align: center;
-}
-.table_bar_btn > .logo-home,
-.table_bar_btn .logo-market,
-.table_bar_btn .logo-active,
-.table_bar_btn .logo-me {
-  width: 40px;
-  height: 36px;
-  margin: 0 auto;
-  background: url('../source/logos.png');
-  background-size: 160px auto;
-  background-repeat: no-repeat;
-}
-.table_bar_btn > .logo-home {
-  background-position: 0 0;
-}
-.table_bar_btn > .logo-market {
-  background-position: -40px 0;
-}
-.table_bar_btn > .logo-active {
-  background-position: -80px 0;
-}
-.table_bar_btn > .logo-me {
-  background-position: -120px 0;
-}
-.table_bar_btn.active .label {
-  color: #0050a3;
-}
-.table_bar_btn.active .logo-home {
-  background-position: 0 -37px;
-}
-.table_bar_btn.active .logo-market {
-  background-position: -40px -37px;
-}
-.table_bar_btn.active .logo-active {
-  background-position: -80px -37px;
-}
-.table_bar_btn.active .logo-me {
-  background-position: -120px -37px;
-}
-.fab {
-  z-index: 100;
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  width: 50px;
-  height: 50px;
-  border-radius: 35px;
-  background: #0050a3;
-  -webkit-box-shadow: 0 2px 4px 0 #494949;
-  box-shadow: 0 2px 4px 0 #494949;
-}
-.fab.withTableBar {
-  bottom: 90px;
-}
-.fab > .icon {
-  height: 24px;
-  width: 24px;
-  background: url('../source/logos.png');
-  background-size: 160px auto;
-  background-repeat: no-repeat;
-  background-position: -72px -136px;
-  margin: 13px;
-}
 /* reset */
 html,
 body,
@@ -403,76 +303,61 @@ a,
 a:hover {
   color: #333;
 }
-.topBanner {
+.myjifenTopBanner {
   width: 100%;
   position: relative;
-  text-align: center;
   overflow: hidden;
 }
-.topImage {
+.myjifenTopImage {
   width: 100%;
   overflow: hidden;
   height: 170px;
+  background-color: #46e193;
 }
-.topImage > img {
-  width: 100%;
-}
-.innerContent {
-  margin-top: -150px;
+.myjifenInnerContent {
+  margin-left: 30px;
+  margin-top: -130px;
   margin-bottom: 20px;
 }
-.userIcon > img {
-  width: 50px;
-  border-radius: 25px;
-}
-.userName {
-  margin-top: 5px;
-  font-size: 16px;
-  color: #0000ff;
-  font-weight: bold;
-}
-.userDiscription {
-  margin-top: 5px;
-  font-size: 13px;
-  color: #0000ff;
-}
-.projectGroup {
-  margin-top: 20px;
-}
-.projectGroupRows {
-  border-top: 1px solid gainsboro;
-  background-color: white;
-}
-.projectGroupRowItem {
-  height: 60px;
-  line-height: 60px;
-  border-bottom: 1px solid gainsboro;
-}
-.projectItemImageDiv {
-  display: inline-block;
-  vertical-align: middle;
-}
-.labelDiv {
-  width: 84%;
-  display: inline-block;
-}
-.projectItemImage {
+.myjifenInnerContentTop {
   height: 40px;
-  border-radius: 20px;
-  margin-left: 20px;
+  line-height: 40px;
+}
+.myjifenImage {
+  width: 20px;
+  border-radius: 10px;
   vertical-align: middle;
 }
-.rowTitle {
-  margin-left: 20px;
+.myjifenText {
+  margin-top: 5px;
   font-size: 16px;
+  color: #ffffff;
 }
-.rowSubTitle {
-  float: right;
-  margin-right: 15px;
-  font-size: 13px;
-  color: aqua;
+.myjifenCount {
+  margin-top: 10px;
+  font-size: 30px;
+  color: #ffffff;
 }
 body {
   background-color: ghostwhite;
-  margin-bottom: 67px;
+}
+.contentContainer {
+  margin-top: 5px;
+}
+.contentTitle {
+  margin-top: 5px;
+  margin-left: 15px;
+  color: gray;
+  font-size: 15px;
+}
+.contentDetail {
+  margin-top: 10px;
+  text-align: center;
+  background-color: white;
+  height: 150px;
+  line-height: 150px;
+}
+.noContentImage {
+  width: 100px;
+  vertical-align: middle;
 }

@@ -19,7 +19,7 @@
     <!--顶部-->
     <div class="aroundShopHeader">
         <span class="aroundShopHeaderLeft">离你最近的门店</span>
-        <span class="aroundShopHeaderRight">其他城市</span>
+        <span class="aroundShopHeaderRight" @click="otherCityBtnClick">其他城市</span>
     </div>
     <!--列表-->
 
@@ -91,7 +91,11 @@
     var appFunc = {
         aroundShopListRowClick:function (url) {
             alert(url)
+        },
+        otherCityBtnClick:function () {
+            alert("跳转到其他城市界面");
         }
+
     };
     var appVue = new Vue({
 
@@ -99,6 +103,7 @@
         data: appData,
         methods: {
             aroundShopListRowClick:appFunc.aroundShopListRowClick,
+            otherCityBtnClick:appFunc.otherCityBtnClick,
         },
         ready: function () {
             loadfencelist();
