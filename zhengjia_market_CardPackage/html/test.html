@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+    <script>
+
+        var backdrop = "<div id='backdropDiv' @click='hidenAlertWindow' style='height: 100%;width: 100%;background: rgba(52, 52, 52, 0.3);position: absolute;top: 0;left: 0'></div>"
+
+        var alertContainer = '<div class="alertContainer" style="background-color:white;width: 60%; border-radius: 5px;border: 1px solid lightgray;display: inline-block;margin-top: 35%"></div>'
+
+        var alertHeader = '<div class="alertHeader" style="text-align: center;font-size: 16px;font-weight: bold;margin-top: 10px">'+title+'</div>'
+
+        var alertBody = '<div class="alertBody" style="text-align: center;margin-top: 8px;padding: 0px 8px;color: gray">'+content+'</div>'
+
+        var seperateLine = '<div style="width: 100%;height: 1px;background-color: lightgray;margin-top: 8px;margin-bottom: 8px"></div>'
+
+        var alertFooter = '<div class="alertFooter" style="text-align: center;margin-top: 8px;margin-bottom: 8px"></div>'
+
+        var conformBtn = '<div class="conformBtn" style="display: inline-block;background-color: lightgray;font-size: 13px;color: blue;padding: 5px 10px;border-radius: 2px;margin-right: 50px;width: 20%">确认</div>'
+
+        var cancleBtn = '<div class="cancleBtn" style="display: inline-block;background-color: red;font-size: 13px;color: white;padding: 5px 10px;border-radius: 2px;width: 20%">取消</div>'
+
+        $(".alertContainer").append(alertHeader)
+        $(".alertContainer").append(alertBody)
+        $(".alertContainer").append(seperateLine)
+        if (hasConformBtn){
+            $(".alertFooter").append(conformBtn)
+        }
+        if (hasCancleBtn){
+            $(".alertFooter").append(cancleBtn)
+        }
+        $(".alertContainer").append(alertFooter)
+
+        $("#backdropDiv").append(alertContainer)
+
+        $(".container").append(backdrop)
+        }
+    </script>
+</div>
+</body>
+</html>

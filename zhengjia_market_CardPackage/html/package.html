@@ -118,14 +118,38 @@
     </div>
 
 
+
+
+
+    <!--<div class="alertContainer" style="background-color:white;width: 60%; border-radius: 5px;border: 1px solid lightgray;display: inline-block;margin-top: 35%">-->
+        <!--&lt;!&ndash;顶部标题&ndash;&gt;-->
+        <!--<div class="alertHeader" style="text-align: center;font-size: 16px;font-weight: bold;margin-top: 10px">-->
+            <!--我是标题-->
+        <!--</div>-->
+        <!--&lt;!&ndash;中间内容&ndash;&gt;-->
+        <!--<div class="alertBody" style="text-align: center;margin-top: 8px;padding: 0px 8px;color: gray">-->
+            <!--我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容-->
+        <!--</div>-->
+        <!--&lt;!&ndash;分割线&ndash;&gt;-->
+        <!--<div style="width: 100%;height: 1px;background-color: lightgray;margin-top: 8px;margin-bottom: 8px"></div>-->
+        <!--&lt;!&ndash;尾部按钮&ndash;&gt;-->
+        <!--<div class="alertFooter" style="text-align: center;margin-top: 8px;margin-bottom: 8px">-->
+            <!--<div class="conformBtn" style="display: inline-block;background-color: lightgray;font-size: 13px;color: blue;padding: 5px 10px;border-radius: 2px;margin-right: 50px;width: 20%">确认</div>-->
+            <!--<div class="cancleBtn" style="display: inline-block;background-color: red;font-size: 13px;color: white;padding: 5px 10px;border-radius: 2px;width: 20%">取消</div>-->
+        <!--</div>-->
+
 <script src="../third/jquery.min.js"></script>
+<script src="../js/alertWindow.js"></script>
 <script src="../third/vue.min.js"></script>
 <script src="../js/core.js"></script>
+
 <script>
     $(function () {
         Core.tableBar.init(0);
         $(window).resize(function(){
             $('#list li').width(( document.body.clientWidth / appData.list.length - appData.list.length + 1));
+            $('#backdropDiv').width(document.body.clientWidth);
+            $('#backdropDiv').height(document.body.clientHeight);
         });
     });
 
@@ -143,7 +167,8 @@
                 window.location.href = url;
             }
             else {
-                alert(url);
+                myAlertWindow.initial("提示","还没有这个功能,敬请期待")
+//                initModalAlertWindow()
             }
         },
         barcodeEnterDivClick:function () {
@@ -181,6 +206,7 @@
         },
         ready: function () {
             loadfencelist();
+
         }
     });
 
@@ -194,7 +220,7 @@
             userCardNum:"13560398888",
             userCardTip:"点击查看会员卡,累计消费积分",
             userBarcodeEnterImg:"../source/Snip20161205_4.png",
-            userBarcodePageUrl:"./barcode.html"
+            ffuserBarcodePageUrl:"./barcode.html"
         }
 
         appData.list = [
